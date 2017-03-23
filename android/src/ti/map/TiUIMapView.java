@@ -207,6 +207,9 @@ public class TiUIMapView extends TiUIFragment implements GoogleMap.OnMarkerClick
 		if (d.containsKey(MapModule.PROPERTY_TRAFFIC)) {
 			setTrafficEnabled(d.getBoolean(MapModule.PROPERTY_TRAFFIC));
 		}
+		/* if(d.containsKey(MapModule.PROPERTY_PADDING)) {
+			setPadding((HashMap) d.get(MapModule.PROPERTY_PADDING));
+		}*/
 		if (d.containsKey(TiC.PROPERTY_ANIMATE)) {
 			animate = d.getBoolean(TiC.PROPERTY_ANIMATE);
 		}
@@ -328,6 +331,27 @@ public class TiUIMapView extends TiUIFragment implements GoogleMap.OnMarkerClick
 
 	protected void setTrafficEnabled(boolean enabled) {
 		map.setTrafficEnabled(enabled);
+	}
+
+	protected void setPadding(int left, int top, int right, int bottom) {
+		/*int left = 0;
+		int top = 0;
+		int right = 0;
+		int bottom = 0;
+
+		if (dict.containsKey(TiC.PROPERTY_LEFT)) {
+			left = TiConvert.toInt(dict, TiC.PROPERTY_LEFT, 0);
+		}
+		if (dict.containsKey(TiC.PROPERTY_TOP)) {
+			top = TiConvert.toInt(dict, TiC.PROPERTY_TOP, 0);
+		}
+		if (dict.containsKey(TiC.PROPERTY_RIGHT)) {
+			right = TiConvert.toInt(dict, TiC.PROPERTY_RIGHT, 0);
+		}
+		if (dict.containsKey(TiC.PROPERTY_BOTTOM)) {
+			bottom = TiConvert.toInt(dict, TiC.PROPERTY_BOTTOM, 0);
+		}*/
+		map.setPadding(left, top, right, bottom);
 	}
 
 	protected void setZoomControlsEnabled(boolean enabled) {
