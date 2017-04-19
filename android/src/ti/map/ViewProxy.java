@@ -189,12 +189,10 @@ public class ViewProxy extends TiViewProxy implements AnnotationDelegate {
 			if (argsObj instanceof KrollDict) {
 				KrollDict args = (KrollDict) argsObj;
 				handleSetPadding(args);
-
-				/*(args.getInt(TiC.PROPERTY_LEFT), args.getInt(TiC.PROPERTY_TOP),
-					args.getInt(TiC.PROPERTY_RIGHT), args.getInt(TiC.PROPERTY_BOTTOM);*/
 			}
 			return true;
 		}
+
 		case MSG_ADD_POLYGON: {
 			result = (AsyncResult) msg.obj;
 			handleAddPolygon(result.getArg());
